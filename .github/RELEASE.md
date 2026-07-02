@@ -1,53 +1,23 @@
 # Release Process
 
-## How to create a release
+Releases are fully automated with [release-please](https://github.com/googleapis/release-please).
 
-1. **Update `CHANGELOG.md`** — add a new `## [x.y.z] - YYYY-MM-DD` section under `## [Unreleased]` with your changes
+## How it works
 
-2. **Run the release script** — this builds the project and bumps the version in `package.json`, creating a git commit and tag automatically:
+1. Write [conventional commits](https://www.conventionalcommits.org/) on `main`:
+   - `fix:` → patch release (0.4.0 → 0.4.1)
+   - `feat:` → minor release (0.4.0 → 0.5.0)
+   - `feat!:` or a `BREAKING CHANGE:` footer → minor while pre-1.0 (0.4.0 → 0.5.0)
+   - `chore:`, `docs:`, `ci:` → no release
+2. release-please keeps a **Release PR** open that accumulates the pending
+   changelog. Review it whenever you like.
+3. **Merge the Release PR** to release: it bumps `package.json`, updates
+   `CHANGELOG.md`, tags `vX.Y.Z`, creates the GitHub Release with generated
+   notes, and attaches `astro-pulsar-X.Y.Z.tar.gz` / `.zip` build archives.
 
-   ```bash
-   npm run release        # patch:  0.2.2 → 0.2.3
-   npm run release:minor  # minor:  0.2.2 → 0.3.0
-   npm run release:major  # major:  0.2.2 → 1.0.0
-   ```
+## One-off overrides
 
-3. **Push the commit and tag**:
+- Force a specific version: add a `Release-As: 1.0.0` footer to any commit.
+- Edit release notes: edit the Release PR body before merging.
 
-   ```bash
-   git push --follow-tags origin main
-   ```
-
-4. GitHub Actions picks up the tag, extracts the matching section from `CHANGELOG.md`, and publishes the GitHub Release with `.tar.gz` and `.zip` archives automatically.
-
----
-
-## CHANGELOG format
-
-Each version block must start with exactly `## [x.y.z] - YYYY-MM-DD` for the release workflow to extract it correctly.
-
-```markdown
-## [Unreleased]
-
-## [0.3.0] - 2026-04-13
-
-### Added
-- New feature description
-
-### Changed
-- Changed behaviour description
-
-### Fixed
-- Bug fix description
-
-## [0.2.2] - 2025-11-11
-...
-```
-
-Supported subsections: `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`.
-
----
-
-## Pre-releases
-
-Any version containing a `-` is automatically marked as a pre-release on GitHub (e.g. `v1.0.0-beta.1`).
+No manual `npm version`, tagging, or changelog editing is needed.
