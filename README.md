@@ -17,6 +17,11 @@
 - 📝 **Markdown Support** - Write content in Markdown with full formatting support
 - 🗺️ **Sitemap** - Automatic sitemap generation for better SEO
 - 📊 **Google Analytics** - Built-in GA4 support (optional)
+- 📡 **RSS Feed** - Auto-generated feed at `/rss.xml` with autodiscovery
+- 🏷️ **Tag Pages** - Static tag index and per-tag listings from post keywords
+- ⏱️ **Reading Time** - Estimated reading time on every post
+- 🔀 **Post Navigation** - Previous/next links between posts
+- 🤖 **Automated Releases** - release-please versioning and changelog generation
 
 ## Tech Stack
 
@@ -245,34 +250,13 @@ The built site will be in the `dist/` folder (or the directory specified in `ast
 - Safari (latest)
 - Edge (latest)
 
-## Versioning & Releases
+## Releases
 
-This project uses [Semantic Versioning](https://semver.org/) and maintains a [CHANGELOG.md](CHANGELOG.md) for tracking changes.
-
-### Automated Release Process
-
-Releases are automated via GitHub Actions. When you push a tag, the workflow will:
-- ✅ Run type checking and build
-- ✅ Extract changelog for the version
-- ✅ Create GitHub release with changelog
-- ✅ Upload distribution archives
-
-### Creating a Release
-
-```bash
-# 1. Create release with automatic changelog
-npm run release         # Auto-detect version bump
-npm run release:patch   # 0.1.0 -> 0.1.1
-npm run release:minor   # 0.1.0 -> 0.2.0
-npm run release:major   # 0.1.0 -> 1.0.0
-
-# 2. Push to trigger automated release
-git push --follow-tags origin main
-
-# GitHub Actions will automatically create the release! 🎉
-```
-
-For detailed release instructions, see [.github/RELEASE.md](.github/RELEASE.md).
+Versioning and release notes are fully automated with
+[release-please](https://github.com/googleapis/release-please): write
+[conventional commits](https://www.conventionalcommits.org/) (`feat:`, `fix:`, …)
+and merge the auto-maintained Release PR when you want to cut a release.
+See [.github/RELEASE.md](.github/RELEASE.md) for details.
 
 ### Conventional Commits
 
