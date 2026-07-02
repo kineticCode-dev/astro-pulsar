@@ -10,8 +10,16 @@ const posts = await getCollection('blog', ({ data }) => data.published === true)
 
 const tagMap = new Map<string, { name: string; count: number }>();
 for (const post of posts) {
+  // Dedupe slugs per post
+  const postTagMap = new Map<string, string>();
   for (const tag of post.data.keywords ?? []) {
     const slug = slugifyTag(tag);
+    if (!postTagMap.has(slug)) {
+      postTagMap.set(slug, tag);
+    }
+  }
+  // Process deduped tags
+  for (const [slug, tag] of postTagMap) {
     const existing = tagMap.get(slug);
     if (existing) {
       existing.count += 1;

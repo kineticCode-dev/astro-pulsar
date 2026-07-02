@@ -9,8 +9,16 @@ export async function getStaticPaths() {
 
   const byTag = new Map<string, { name: string; posts: CollectionEntry<'blog'>[] }>();
   for (const post of posts) {
+    // Dedupe slugs per post
+    const postTagMap = new Map<string, string>();
     for (const tag of post.data.keywords ?? []) {
       const slug = slugifyTag(tag);
+      if (!postTagMap.has(slug)) {
+        postTagMap.set(slug, tag);
+      }
+    }
+    // Process deduped tags
+    for (const [slug, tag] of postTagMap) {
       const entry = byTag.get(slug);
       if (entry) {
         entry.posts.push(post);
