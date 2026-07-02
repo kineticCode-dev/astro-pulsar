@@ -54,9 +54,6 @@ lerna-debug.log*
 # OS
 Thumbs.db
 
-# Optional: Ignore Claude.md if you don't want it in version control
-# CLAUDE.md
-
 # TypeScript cache
 *.tsbuildinfo
 
@@ -64,5 +61,4 @@ Thumbs.db
 .tmp/
 tmp/
 temp/
-CLAUDE.md
 theme-images/
