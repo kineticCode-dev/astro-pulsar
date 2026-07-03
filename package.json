@@ -2,7 +2,7 @@
   "name": "astro-pulsar",
   "type": "module",
   "version": "0.4.0",
-  "description": "Pulsar - A fast, modern Astro blog theme with dark mode, SEO optimization, and responsive design. Built with Tailwind CSS for the modern web.",
+  "description": "Pulsar - A fast, modern Astro blog theme with flash-free dark mode, Shiki syntax highlighting, RSS, tag pages, reading time, and comprehensive SEO. Built with Tailwind CSS.",
   "author": "amirdaraee",
   "license": "MIT",
   "keywords": [
@@ -13,6 +13,8 @@
     "blog-theme",
     "dark-mode",
     "seo",
+    "rss",
+    "shiki",
     "tailwind",
     "tailwindcss",
     "typescript",
