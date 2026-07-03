@@ -5,16 +5,15 @@ import { SITE_CONFIG } from '../config';
 
 <Layout title={`About - ${SITE_CONFIG.title}`}>
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <h2 class="text-3xl font-bold text-center uppercase text-gray-600 dark:text-gray-400 mb-6">
+    <h1 class="text-3xl font-bold text-center uppercase text-gray-600 dark:text-gray-400 mb-6">
       About me
-    </h2>
+    </h1>
 
     <!-- Icon Divider -->
     <div class="divider-custom">
       <div class="divider-custom-line"></div>
       <div class="divider-custom-icon">
         <svg
-          class="bi bi-star-fill"
           width="0.5em"
           height="0.5em"
           viewBox="0 0 16 16"
@@ -30,38 +29,29 @@ import { SITE_CONFIG } from '../config';
     </div>
 
     <div class="flex flex-col items-center text-gray-600 dark:text-gray-400 mt-8">
-      <h1 class="text-4xl font-semibold mb-8 text-gray-900 dark:text-gray-100">About This Site</h1>
-
       <div class="w-full space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
         <p>
           Welcome! This is a sample about page for the Pulsar theme. Replace this content with your own story, background, and what makes you unique.
         </p>
         <p>
-          This theme is built with <strong>Astro</strong> and <strong>Tailwind CSS</strong>. It features dark mode, SEO optimization, accessibility features, and responsive design out of the box.
+          This theme is built with <strong>Astro</strong> and <strong>Tailwind CSS</strong>. It ships with dark mode, syntax highlighting, an RSS feed, tag pages, reading time estimates, previous/next post navigation, SEO optimization, optional analytics, accessibility features, and responsive design out of the box.
         </p>
         <p>
           Customize this page by editing <code>src/pages/about.astro</code>. Update your site information in <code>src/config.ts</code> to personalize the entire theme with your details.
         </p>
-
-        <div class="mt-8">
-          <h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Get In Touch</h3>
-          <p>Feel free to connect with me on:</p>
-          <ul class="list-disc list-inside mt-2">
-            {SITE_CONFIG.socialLinks.github && (
-              <li>
-                GitHub:{' '}
-                <a
-                  href={`https://github.com/${SITE_CONFIG.socialLinks.github}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  @{SITE_CONFIG.socialLinks.github}
-                </a>
-              </li>
-            )}
-          </ul>
-        </div>
+        {SITE_CONFIG.socialLinks.github && (
+          <p>
+            Find me on GitHub:{' '}
+            <a
+              href={`https://github.com/${SITE_CONFIG.socialLinks.github}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-blue-600 dark:text-blue-400 hover:underline"
+            >
+              @{SITE_CONFIG.socialLinks.github}
+            </a>
+          </p>
+        )}
       </div>
     </div>
   </div>
