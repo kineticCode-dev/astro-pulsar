@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.5.0](https://github.com/amirdaraee/astro-pulsar/compare/v0.4.1...v0.5.0) (2026-07-03)
+
+
+### Features
+
+* add copy-to-clipboard button on code blocks ([0000136](https://github.com/amirdaraee/astro-pulsar/commit/000013622ab774fd8cdc6da4500588bb33dd94d1))
+* use an always-visible icon for the code copy button ([ba5a6c3](https://github.com/amirdaraee/astro-pulsar/commit/ba5a6c3570c463412df70fde0c177fb36fbfbf76))
+
+
+### Bug Fixes
+
+* give light mode code blocks a subtle gray background ([47f3153](https://github.com/amirdaraee/astro-pulsar/commit/47f3153753a0bcdfdabe4aaf70697cb031e6e426))
+
 ## [0.4.1](https://github.com/amirdaraee/astro-pulsar/compare/v0.4.0...v0.4.1) (2026-07-03)
 
 
