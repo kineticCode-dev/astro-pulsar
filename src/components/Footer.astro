@@ -49,8 +49,7 @@ const socialLinks = [
 <footer id="footer" class={`flex flex-col text-center ${paddingClass} bg-gray-50 dark:bg-gray-800 transition-colors duration-200`}>
   <!-- Social buttons -->
   {socialLinks.length > 0 && (
-    <div class="text-center">
-      <h4 class="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">You can find me at</h4>
+    <div class="text-center" aria-label="Social links">
       <ul class="flex justify-center items-center space-x-4 list-none">
         {socialLinks.map(link => (
           <li>
@@ -77,7 +76,7 @@ const socialLinks = [
 
       <!-- Copyright -->
       <div class="text-gray-600 dark:text-gray-400 text-sm">
-        Copyright © {currentYear}
+        Copyright © {currentYear}{' '}
         <a href={SITE_CONFIG.siteUrl} class="text-gray-900 hover:text-gray-600 dark:text-gray-100 dark:hover:text-gray-400 font-medium">{SITE_CONFIG.author}</a>
       </div>
       <!-- Copyright end -->
