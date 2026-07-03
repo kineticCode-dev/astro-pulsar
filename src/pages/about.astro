@@ -60,24 +60,6 @@ import { SITE_CONFIG } from '../config';
                 </a>
               </li>
             )}
-            {SITE_CONFIG.socialLinks.twitter && (
-              <li>
-                Twitter:{' '}
-                <a
-                  href={`https://twitter.com/${SITE_CONFIG.socialLinks.twitter}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                  @{SITE_CONFIG.socialLinks.twitter}
-                </a>
-              </li>
-            )}
-            {SITE_CONFIG.email && (
-              <li>
-                Email: <a href={`mailto:${SITE_CONFIG.email}`} class="text-blue-600 dark:text-blue-400 hover:underline">{SITE_CONFIG.email}</a>
-              </li>
-            )}
           </ul>
         </div>
       </div>
