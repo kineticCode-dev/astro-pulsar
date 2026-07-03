@@ -113,8 +113,8 @@ Visit `http://localhost:4321` to see your blog.
 │   │   ├── SEO.astro
 │   │   └── DarkModeToggle.astro
 │   ├── content/
-│   │   ├── config.ts   # Content collections schema
 │   │   └── blog/       # Blog posts (markdown)
+│   ├── content.config.ts # Content collections schema
 │   ├── layouts/
 │   │   └── Layout.astro # Main layout wrapper
 │   ├── pages/          # File-based routing
@@ -122,9 +122,10 @@ Visit `http://localhost:4321` to see your blog.
 │   │   ├── blog/
 │   │   ├── about.astro
 │   │   └── ...
+│   ├── styles/
+│   │   └── global.css # Tailwind entry point & theme customization
 │   └── config.ts       # Site configuration
 ├── astro.config.mjs    # Astro configuration
-├── tailwind.config.mjs # Tailwind configuration
 └── package.json
 ```
 
@@ -175,6 +176,7 @@ Edit the navigation items in `src/config.ts`:
 export const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/blog", label: "Blog" },
+  { href: "/tags", label: "Tags" },
   { href: "/about", label: "About" },
   // Add more items as needed
 ];
@@ -182,29 +184,27 @@ export const NAV_ITEMS = [
 
 ### Colors and Styling
 
-Customize the theme in `tailwind.config.mjs`:
+Pulsar uses Tailwind CSS v4, which is config-file-free — theme customization lives directly
+in `src/styles/global.css`. Add your overrides with the `@theme` directive:
 
-```javascript
-export default {
-  theme: {
-    extend: {
-      colors: {
-        primary: '#your-color',
-        secondary: '#your-color'
-      },
-      fontFamily: {
-        sans: ['Your Font', 'sans-serif']
-      }
-    }
-  }
+```css
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #your-color;
+  --color-secondary: #your-color;
+  --font-sans: "Your Font", sans-serif;
 }
 ```
+
+Additional global styles (beyond Tailwind utilities) can be added in
+`src/layouts/Layout.astro` inside the `<style is:global>` block.
 
 ### Custom Fonts
 
 1. Add font files to `public/fonts/`
 2. Update `@font-face` rules in `src/layouts/Layout.astro`
-3. Reference in `tailwind.config.mjs`
+3. Reference the font in `src/styles/global.css` via `@theme` (e.g. `--font-sans`)
 
 ### Google Analytics
 
