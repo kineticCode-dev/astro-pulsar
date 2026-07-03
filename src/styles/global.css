@@ -2,3 +2,9 @@
 
 /* Class-based dark mode (matches dark class on <html>) */
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Reserve scrollbar space on every page so centered content (header nav,
+   containers) doesn't shift when navigating between short and long pages */
+html {
+  scrollbar-gutter: stable;
+}
