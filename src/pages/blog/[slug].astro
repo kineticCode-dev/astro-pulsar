@@ -161,6 +161,28 @@ const structuredData = {
   </article>
 </Layout>
 
+<script>
+  // Fire a single read_complete event when the reader reaches the end of the
+  // article body. reading_seconds approximates time actually spent on the page.
+  const articleBody = document.getElementById('main-content');
+  if (articleBody && 'IntersectionObserver' in window) {
+    const start = Date.now();
+    const wordCount = (articleBody.textContent ?? '').trim().split(/\s+/).length;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        observer.disconnect();
+        (window as any).gtag?.('event', 'read_complete', {
+          reading_seconds: Math.round((Date.now() - start) / 1000),
+          word_count: wordCount,
+        });
+      }
+    });
+    const sentinel = document.createElement('span');
+    articleBody.appendChild(sentinel);
+    observer.observe(sentinel);
+  }
+</script>
+
 <style is:global>
   .prose {
     max-width: 100%;

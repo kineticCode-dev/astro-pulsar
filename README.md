@@ -16,7 +16,7 @@
 - 🔍 **Syntax Highlighting** - Prism syntax highlighting with GitHub Dark theme
 - 📝 **Markdown Support** - Write content in Markdown with full formatting support
 - 🗺️ **Sitemap** - Automatic sitemap generation for better SEO
-- 📊 **Google Analytics** - Built-in GA4 support (optional)
+- 📊 **Google Analytics** - Production-only GA4 with content groups, post dimensions, theme user property, and read-completion events (optional)
 - 📡 **RSS Feed** - Auto-generated feed at `/rss.xml` with autodiscovery
 - 🏷️ **Tag Pages** - Static tag index and per-tag listings from post keywords
 - ⏱️ **Reading Time** - Estimated reading time on every post
@@ -210,7 +210,13 @@ Additional global styles (beyond Tailwind utilities) can be added in
 To enable Google Analytics:
 
 1. Add your GA tracking ID to `src/config.ts`
-2. The tracking code will automatically load (controlled in `Layout.astro`)
+2. The tracking code loads automatically via the `Analytics` component (rendered in `Layout.astro`)
+
+Tracking only runs in production builds, so dev and preview traffic never reaches your property. Beyond page views, the theme reports:
+
+- `content_group` (`blog-post` vs `page`), plus `post_author` and `post_tags` dimensions on articles
+- a `site_theme` user property (dark/light), updated by a `theme_toggle` event
+- a `read_complete` event when a reader reaches the end of a post, with `reading_seconds` and `word_count`
 
 To disable, leave `googleAnalyticsId` empty or set `features.analytics` to `false`.
 

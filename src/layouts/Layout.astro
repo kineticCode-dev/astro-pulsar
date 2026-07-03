@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import SEO from '../components/SEO.astro';
+import Analytics from '../components/Analytics.astro';
 import { SITE_CONFIG } from '../config';
 import '../styles/global.css';
 
@@ -84,17 +85,11 @@ const {
     </script>
 
     <!-- Google Analytics -->
-    {SITE_CONFIG.googleAnalyticsId && SITE_CONFIG.features.analytics && (
-      <>
-        <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${SITE_CONFIG.googleAnalyticsId}`}></script>
-        <script is:inline define:vars={{ gaId: SITE_CONFIG.googleAnalyticsId }}>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', gaId);
-        </script>
-      </>
-    )}
+    <Analytics
+      contentGroup={type === 'article' ? 'blog-post' : 'page'}
+      author={author}
+      tags={tags}
+    />
 
     <title>{title}</title>
   </head>

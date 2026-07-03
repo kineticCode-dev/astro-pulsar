@@ -51,7 +51,10 @@
   // Toggle theme on button click
   themeToggleBtn?.addEventListener('click', () => {
     const isDark = document.documentElement.classList.contains('dark');
-    setTheme(isDark ? 'light' : 'dark');
+    const newTheme = isDark ? 'light' : 'dark';
+    setTheme(newTheme);
+    (window as any).gtag?.('event', 'theme_toggle', { theme: newTheme });
+    (window as any).gtag?.('set', 'user_properties', { site_theme: newTheme });
   });
 
   // Initialize theme
