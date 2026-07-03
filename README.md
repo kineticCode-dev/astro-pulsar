@@ -176,9 +176,8 @@ Edit the navigation items in `src/config.ts`:
 export const NAV_ITEMS = [
   { href: "/", label: "Home" },
   { href: "/blog", label: "Blog" },
-  { href: "/tags", label: "Tags" },
   { href: "/about", label: "About" },
-  // Add more items as needed
+  // Add more items as needed, e.g. { href: "/tags", label: "Tags" }
 ];
 ```
 
