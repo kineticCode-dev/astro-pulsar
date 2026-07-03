@@ -5,6 +5,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0](https://github.com/amirdaraee/astro-pulsar/compare/v0.3.0...v0.4.0) (2026-07-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* theme now requires Astro 7 and Node 22+.
+
+### Features
+
+* add GitHub Pages deploy workflow and fix base path handling for Astro 6 ([9b761df](https://github.com/amirdaraee/astro-pulsar/commit/9b761df54905f35245968cb913205a21bc0e60b9))
+* add portfolio page ([208e093](https://github.com/amirdaraee/astro-pulsar/commit/208e09359d9ee7afb46ea9a43f4231470b279286))
+* add production-only GA4 analytics with content dimensions and engagement events ([b4085ca](https://github.com/amirdaraee/astro-pulsar/commit/b4085cadc38f43f85cc902377c4642f38437af04))
+* add reading time estimate and previous/next post navigation ([974f318](https://github.com/amirdaraee/astro-pulsar/commit/974f318179f7c84146fcf80c0798ba89d642265c))
+* add RSS feed with autodiscovery link and footer icon ([a6cfa35](https://github.com/amirdaraee/astro-pulsar/commit/a6cfa35b4c394a918f04005f47add8b6f8cc5557))
+* add tag index and per-tag listing pages from post keywords ([e13c3c9](https://github.com/amirdaraee/astro-pulsar/commit/e13c3c923a98d8a7b2c2be516e02394d89904a9a))
+* align footer social icons left and copyright right in a single row ([46cd184](https://github.com/amirdaraee/astro-pulsar/commit/46cd18498967e649d3fa4795d2db13fe84494363))
+* deploy Astro 6 live demo via GitHub Pages Actions workflow ([da47aeb](https://github.com/amirdaraee/astro-pulsar/commit/da47aeb25495c4702ad21399da2ce994099676c5))
+* link footer socials to platform home pages, swap Twitter bird for X logo, shrink icons ([2f70a17](https://github.com/amirdaraee/astro-pulsar/commit/2f70a171ebe6f653b5dd45ade16b7e5f3faa681f))
+* syntax highlighting via Shiki with GitHub light/dark themes following site theme ([9da4494](https://github.com/amirdaraee/astro-pulsar/commit/9da44940c01fec761cd31daf96d7b6e61b32bf2d))
+* upgrade to Astro 7, Tailwind 4.3.2; drop obsolete dependency overrides ([c11775b](https://github.com/amirdaraee/astro-pulsar/commit/c11775b0c093f9d593b4e6cb7197b59f764de305))
+
+
+### Bug Fixes
+
+* add missing space in footer copyright and show social icons without heading ([b4b0123](https://github.com/amirdaraee/astro-pulsar/commit/b4b01232176a0d82d4ce3dd54106eebd87554c08))
+* dedupe tag slugs per post to prevent duplicate listings and inflated counts ([da720b6](https://github.com/amirdaraee/astro-pulsar/commit/da720b60a17b769c614d0a5a41a9b68f999f5572))
+* drop Twitter and email lines from the about page contact list ([ad7876f](https://github.com/amirdaraee/astro-pulsar/commit/ad7876f7b8717d3b380264fc700c5ba1ffe3c1ac))
+* give every demo post a distinct cover image, refresh README screenshot ([e3edf52](https://github.com/amirdaraee/astro-pulsar/commit/e3edf526bf9df8a8a2153ad572f3b0f2c53635f8))
+* remove tags link from the navigation menu ([1bbf118](https://github.com/amirdaraee/astro-pulsar/commit/1bbf11862d7ec04dffdb6417e28616770b7c253f))
+* render dark mode toggle icon via CSS to prevent flash and wire all toggle instances ([bf6ea6e](https://github.com/amirdaraee/astro-pulsar/commit/bf6ea6ec5532e3f738d3eb0f93c745bfb01b7a65))
+* repair broken demo post image and add missing README screenshot ([915382d](https://github.com/amirdaraee/astro-pulsar/commit/915382da46e7098ca2187ef57ae1774e3818e7e5))
+* reserve scrollbar gutter to prevent layout shift between pages ([529b17c](https://github.com/amirdaraee/astro-pulsar/commit/529b17cd572512c0a449970941ffd62b8f8cca3a))
+* tighten footer padding, refresh about page copy, point portfolio samples at GitHub ([625308c](https://github.com/amirdaraee/astro-pulsar/commit/625308ca590f3105527c6dafc988fbf2e013c186))
+* use placeholder projects on the portfolio page ([01825c3](https://github.com/amirdaraee/astro-pulsar/commit/01825c3967edeb752689b2b36957a70c7fe03acf))
+
 ## [0.3.0] - 2026-04-13
 
 ### Added
