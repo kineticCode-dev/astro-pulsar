@@ -46,40 +46,37 @@ const socialLinks = [
 ].filter(link => link.url); // Only show configured social links
 ---
 
-<footer id="footer" class={`flex flex-col text-center ${paddingClass} bg-gray-50 dark:bg-gray-800 transition-colors duration-200`}>
-  <!-- Social buttons -->
-  {socialLinks.length > 0 && (
-    <div class="text-center" aria-label="Social links">
-      <ul class="flex justify-center items-center space-x-4 list-none">
-        {socialLinks.map(link => (
-          <li>
-            <a
-              href={link.url!}
-              target="_blank"
-              rel="noopener noreferrer"
-              class={`text-gray-700 ${link.hoverColor} dark:text-gray-300 transition-colors duration-200`}
-              title={link.name}
-              aria-label={link.name}
-            >
-              <i class={`fa ${link.icon} fa-2x`} aria-hidden="true"></i>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )}
-  <!-- Social buttons end -->
+<footer id="footer" class={`${paddingClass} bg-gray-50 dark:bg-gray-800 transition-colors duration-200`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center gap-4">
+    <!-- Social buttons -->
+    {socialLinks.length > 0 && (
+      <div aria-label="Social links">
+        <ul class="flex items-center space-x-4 list-none">
+          {socialLinks.map(link => (
+            <li>
+              <a
+                href={link.url!}
+                target="_blank"
+                rel="noopener noreferrer"
+                class={`text-gray-700 ${link.hoverColor} dark:text-gray-300 transition-colors duration-200`}
+                title={link.name}
+                aria-label={link.name}
+              >
+                <i class={`fa ${link.icon} fa-2x`} aria-hidden="true"></i>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+    <!-- Social buttons end -->
 
-  {showCopyright && (
-    <>
-      <hr class="my-6 border-gray-300 dark:border-gray-700 w-full max-w-md mx-auto" />
-
-      <!-- Copyright -->
-      <div class="text-gray-600 dark:text-gray-400 text-sm">
+    <!-- Copyright -->
+    {showCopyright && (
+      <div class="ml-auto text-gray-600 dark:text-gray-400 text-sm">
         Copyright © {currentYear}{' '}
         <a href={SITE_CONFIG.siteUrl} class="text-gray-900 hover:text-gray-600 dark:text-gray-100 dark:hover:text-gray-400 font-medium">{SITE_CONFIG.author}</a>
       </div>
-      <!-- Copyright end -->
-    </>
-  )}
+    )}
+  </div>
 </footer>
