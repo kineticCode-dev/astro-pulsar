@@ -13,7 +13,7 @@
 - 📱 **Responsive** - Mobile-first design that looks great on all devices
 - ⚡ **Fast** - Built with Astro for optimal performance and minimal JavaScript
 - 🎨 **Customizable** - Easy-to-use configuration file for personalizing your blog
-- 🔍 **Syntax Highlighting** - Prism syntax highlighting with GitHub Dark theme
+- 🔍 **Syntax Highlighting** - Shiki with GitHub light/dark themes that follow the site theme
 - 📝 **Markdown Support** - Write content in Markdown with full formatting support
 - 🗺️ **Sitemap** - Automatic sitemap generation for better SEO
 - 📊 **Google Analytics** - Production-only GA4 with content groups, post dimensions, theme user property, and read-completion events (optional)
@@ -28,7 +28,7 @@
 - **Framework:** [Astro](https://astro.build)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com)
 - **Language:** [TypeScript](https://www.typescriptlang.org)
-- **Syntax Highlighting:** [Prism](https://prismjs.com)
+- **Syntax Highlighting:** [Shiki](https://shiki.style)
 - **Icons:** [Font Awesome 4.7](https://fontawesome.com/v4)
 
 ## Quick Start

@@ -23,9 +23,13 @@ export default defineConfig({
   },
 
   markdown: {
-    syntaxHighlight: 'prism',
+    syntaxHighlight: 'shiki',
     shikiConfig: {
-      theme: 'github-dark'
+      // Dual themes follow the site's dark mode (see global.css)
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark'
+      }
     }
   }
 });
