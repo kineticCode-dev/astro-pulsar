@@ -4,7 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 
 const base = import.meta.env.BASE_URL;
 
-const allPosts = await getCollection('blog', ({ data }) => {
+const allPosts = await getCollection('projects', ({ data }) => {
   return data.published === true;
 });
 
@@ -12,9 +12,9 @@ const allPosts = await getCollection('blog', ({ data }) => {
 const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<Layout title="Articles - KC">
+<Layout title="Projects - KC">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12" id="main-content">
-    <h1 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">Articles</h1>
+    <h1 class="text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100">Projects</h1>
 
     <section aria-label="Blog post listing">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -46,7 +46,7 @@ const sortedPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.
                 </time>
                 <div class="text-right">
                   <a
-                    href={`${base}blog/${post.id}`}
+                    href={`${base}projects/${post.id}`}
                     class="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-200"
                     aria-label={`Read full article: ${post.data.title}`}
                   >

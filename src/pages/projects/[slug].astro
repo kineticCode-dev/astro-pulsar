@@ -7,7 +7,7 @@ import { readingTime } from '../../utils/readingTime';
 const base = import.meta.env.BASE_URL;
 
 export async function getStaticPaths() {
-  const blogPosts = await getCollection('blog');
+  const blogPosts = await getCollection('projects');
   const published = blogPosts
     .filter((p) => p.data.published)
     .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
@@ -54,7 +54,7 @@ const structuredData = {
   "keywords": post.data.keywords?.join(', ') || '',
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": `https://amirdaraee.com/blog/${post.id}`
+    "@id": `https://amirdaraee.com/projects/${post.id}`
   }
 };
 ---
@@ -136,12 +136,12 @@ const structuredData = {
         {(prev || next) && (
           <div class="flex justify-between gap-4 text-sm">
             {prev ? (
-              <a href={`${base}blog/${prev.id}`} class="text-blue-600 dark:text-blue-400 hover:underline max-w-[45%]" rel="prev">
+              <a href={`${base}projects/${prev.id}`} class="text-blue-600 dark:text-blue-400 hover:underline max-w-[45%]" rel="prev">
                 ← {prev.data.title}
               </a>
             ) : <span />}
             {next ? (
-              <a href={`${base}blog/${next.id}`} class="text-blue-600 dark:text-blue-400 hover:underline max-w-[45%] text-right" rel="next">
+              <a href={`${base}projects/${next.id}`} class="text-blue-600 dark:text-blue-400 hover:underline max-w-[45%] text-right" rel="next">
                 {next.data.title} →
               </a>
             ) : <span />}
@@ -149,11 +149,11 @@ const structuredData = {
         )}
         <div class="text-center">
           <a
-            href={`${base}blog`}
+            href={`${base}projects`}
             class="inline-block px-6 py-3 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-md hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-colors duration-200"
             aria-label="Return to blog post listing"
           >
-            ← Back to Articles
+            ← Back to Projects
           </a>
         </div>
       </nav>

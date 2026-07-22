@@ -25,3 +25,34 @@ html {
   font-weight: var(--shiki-dark-font-weight) !important;
   text-decoration: var(--shiki-dark-text-decoration) !important;
 }
+
+/* ==========================================================================
+   OVERRIDE TEMA SCURO: Elimina sfumature blu -> Nero & Zinc Neutro
+   ========================================================================== */
+
+/* 1. Sfondo principale e testo generale */
+html.dark,
+html.dark body {
+  background-color: #09090b !important; /* Zinc 950: Nero profondo e neutro */
+  color: #e4e4e7 !important;            /* Zinc 200: Testo grigio chiaro riposante */
+}
+
+/* 2. Contenitori, Card (articoli e progetti), Header e Footer */
+html.dark header,
+html.dark footer,
+html.dark nav,
+html.dark article,
+html.dark .blog-card,
+html.dark [class*="bg-gray-"],
+html.dark [class*="bg-slate-"] {
+  background-color: #141417 !important; /* Zinc 900: Grigio scuro opaco per staccare dal fondo */
+  border-color: #27272a !important;     /* Zinc 800: Bordi discreti e neutri */
+}
+
+/* 3. Titoli (H1, H2, H3) e Link */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4 {
+  color: #fafafa !important; /* Bianco pulito ma non abbagliante */
+}

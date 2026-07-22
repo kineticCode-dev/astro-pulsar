@@ -30,15 +30,26 @@ import { SITE_CONFIG } from '../config';
 
     <div class="flex flex-col items-center text-gray-600 dark:text-gray-400 mt-8">
       <div class="w-full space-y-6 text-gray-700 dark:text-gray-300 leading-relaxed">
-        <p>
-          Welcome! This is a sample about page for the Pulsar theme. Replace this content with your own story, background, and what makes you unique.
-        </p>
-        <p>
-          This theme is built with <strong>Astro</strong> and <strong>Tailwind CSS</strong>. It ships with dark mode, syntax highlighting, an RSS feed, tag pages, reading time estimates, previous/next post navigation, SEO optimization, optional analytics, accessibility features, and responsive design out of the box.
-        </p>
-        <p>
-          Customize this page by editing <code>src/pages/about.astro</code>. Update your site information in <code>src/config.ts</code> to personalize the entire theme with your details.
-        </p>
+	  <div>
+		              <p>
+                I'm a mechatronic engineer working in industrial automation and
+                PLC software engineering. KineticCode is my engineering log — a
+                space dedicated to bridging the gap between physical systems,
+                robust software architectures, and functional prototyping.
+              </p>
+              <p>
+                My background spans from developing real-time industrial
+                software to building custom C++ applications.
+                I focus on how logic interacts with physical motion,
+                prioritizing clean, deterministic systems over superficial
+                trends.
+              </p>
+              <p>
+                When I'm not programming controllers or refactoring C++
+                codebases, I'm usually designing functional mechanisms in CAD
+                and bringing them to life through 3D printing.
+              </p>
+            </div>
         {SITE_CONFIG.socialLinks.github && (
           <p>
             Find me on GitHub:{' '}
@@ -50,8 +61,19 @@ import { SITE_CONFIG } from '../config';
             >
               @{SITE_CONFIG.socialLinks.github}
             </a>
-          </p>
+          </p>         
         )}
+        <p>
+          Read my articles on Substack:{' '}
+          <a
+            href="https://kineticcode.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-blue-600 dark:text-blue-400 hover:underline"
+          >
+            KineticCode
+          </a>
+        </p>
       </div>
     </div>
   </div>

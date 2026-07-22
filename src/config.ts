@@ -6,17 +6,17 @@
 
 export const SITE_CONFIG = {
   // Basic site information
-  title: "My Blog",
-  description: "A modern blog built with Astro",
-  author: "amirdaraee",
-  email: "amirdaraee@gmail.com",
+  title: "Kinetic-code's Blog",
+  description: "Engineering from scratch. Exploring the logic behind the systems. Dive into the Articles for theoretical insights and architectural deep-dives, or explore the Projects for hands-on software and hardware builds with actual code.",
+  author: "KineticCode",
+  email: "kineticcode.dev@gmail.com",
 
   // Social media links
   // Remove or leave empty any platforms you don't use
   socialLinks: {
-    github: "amirdaraee",
-    twitter: "amirdaraee",
-    linkedin: "amirdaraee",
+    github: "kineticCode-dev",
+    twitter: "",
+    linkedin: "",
     youtube: "", // Leave empty if not used
   },
 
@@ -31,7 +31,7 @@ export const SITE_CONFIG = {
 
   // Site URL (used for canonical URLs and SEO)
   // Update this with your production URL
-  siteUrl: "https://amirdaraee.github.io/astro-pulsar",
+  siteUrl: "",
 
   // Default meta image for social sharing
   // Place your image in the public folder
@@ -61,7 +61,7 @@ export const AUTHOR_INFO = {
 // Navigation menu items
 export const NAV_ITEMS = [
   { href: "/", label: "Home" },
-  { href: "/blog", label: "Blog" },
-  { href: "/portfolio", label: "Portfolio" },
+  { href: "/blog", label: "Articles" },
+  { href: "/projects", label: "Projects" },
   { href: "/about", label: "About" },
 ];
