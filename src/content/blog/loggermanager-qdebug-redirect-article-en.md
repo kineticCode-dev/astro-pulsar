@@ -64,13 +64,6 @@ To avoid depending on an external configuration file — which in an industrial 
 - `ENABLE_FILE_LOG=1` turns on file logging. If it is missing or set to anything other than `1`, the application behaves exactly like before: zero overhead, no file created.
 - `MAX_LOG_COUNT` sets how many log files to keep in rotation (default: 10).
 
-```
-# Windows cmd
-set ENABLE_FILE_LOG=1 && my_app.exe
-
-# Linux/macOS
-ENABLE_FILE_LOG=1 ./my_app
-```
 
 There is one non-obvious detail worth pointing out when testing from Qt Creator: `QProcessEnvironment::systemEnvironment()` returns a snapshot of the environment of the *parent process*, taken when it started. If you set the variable after already opening the IDE, the child app will still inherit the old environment. You need to set it in *Projects → Run → Environment*, or restart the IDE from scratch.
 
