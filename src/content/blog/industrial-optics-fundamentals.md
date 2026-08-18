@@ -1,9 +1,12 @@
 ---
 title: "Industrial optics fundamentals: what actually matters when you pick a lens"
+photo: "/logo.png"
 description: "A practical primer on machine vision optics — field of view, working distance, depth of field, focal length, mounts, F-number, and the trade-offs that decide whether an inspection system actually works."
-pubDate: 2026-08-18
-tags: ["machine-vision", "optics", "vision-systems", "fundamentals"]
-draft: true
+published: true
+date: "2026-08-18"
+author: "KineticCode"
+keywords: ["machine-vision", "optics", "vision-systems", "fundamentals"]
+language: "en"
 ---
 
 ## What an industrial optical system actually does
