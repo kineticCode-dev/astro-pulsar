@@ -121,7 +121,7 @@ SELECT * FROM get_aggregated_expenses(2026, 28, 'weekly');
 
 And the database will reply with the requested data.
 
-The final Dashboard looks like this:
+The Final Dashboard looks like this:
 
 ![Dashboard](./img/dashboard_view.png)
 
