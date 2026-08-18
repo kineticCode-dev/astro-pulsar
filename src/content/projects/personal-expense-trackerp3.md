@@ -19,10 +19,10 @@ The webapp will be made of two different screens:
 * An insert screen: where we can add expenses to our database.
 
 The dashboard mockup looks like this:
-![Main View](/mainView.png)
+![Main View](./img/mainView.png)
 
 The insert view mockup looks like this:
-![Insert View](/insertView.png)
+![Insert View](./img/insertView.png)
 
 ## Developing the Insert View
 In this section, we will develop the insert view that allows us to add an expense to the database.
@@ -33,7 +33,7 @@ The user will need to input:
 * Notes.
 
 The final interface looks like this:
-![Insert View](/insert_view.png)
+![Insert View](./img/insert_view.png)
 
 ## Developing the Dashboard View
 Now we will develop the Dashboard View, which will be the summary screen of our finances. The idea is to insert some charts to show our financial status immediately. We must consider that it will be used mainly from mobile, so the screen will be small. It is very important to organize the space as best as possible. A good idea could be: I show only one chart at a time, and somehow, I have the possibility to change the view.
@@ -123,9 +123,9 @@ And the database will reply with the requested data.
 
 The final Dashboard looks like this:
 
-![Dashboard](/dashboard_view.png)
+![Dashboard](./img/dashboard_view.png)
 
-![Dashboard2](/dashboard_view2.png)
+![Dashboard2](./img/dashboard_view2.png)
 
 ## Publishing the webapp online
 To host our Flutter web app, we will use GitHub Pages as a hosting service for a static site, which is completely free. Once compiled, our webapp is nothing more than a set of `HTML, CSS, JavaScript, and asset` files.
